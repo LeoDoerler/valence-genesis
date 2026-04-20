@@ -27,15 +27,20 @@ export function Footer() {
           <Link to="/contact" className="link-hover">Contact</Link>
         </nav>
 
-        <div className="flex md:justify-end gap-5 items-start">
-          <a href="https://instagram.com" aria-label="Instagram" className="link-hover text-foreground">
-            <Instagram className="h-5 w-5" strokeWidth={1.5} />
-          </a>
-          <a href="https://tiktok.com" aria-label="TikTok" className="link-hover text-foreground">
-            <TikTokIcon className="h-5 w-5" />
-          </a>
-          <a href="https://twitter.com" aria-label="X" className="link-hover text-foreground">
-            <Twitter className="h-5 w-5" strokeWidth={1.5} />
+        <div className="flex flex-col md:items-end gap-5">
+          <div className="flex gap-5">
+            <a href="https://instagram.com" aria-label="Instagram" className="link-hover text-foreground">
+              <Instagram className="h-5 w-5" strokeWidth={1.5} />
+            </a>
+            <a href="https://tiktok.com" aria-label="TikTok" className="link-hover text-foreground">
+              <TikTokIcon className="h-5 w-5" />
+            </a>
+            <a href="https://twitter.com" aria-label="X" className="link-hover text-foreground">
+              <Twitter className="h-5 w-5" strokeWidth={1.5} />
+            </a>
+          </div>
+          <a href="mailto:hello@valence.co" className="text-xs text-muted-foreground link-hover tracking-wide">
+            hello@valence.co
           </a>
         </div>
       </div>
