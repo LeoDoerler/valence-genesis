@@ -53,6 +53,10 @@ export default async function handler(req, res) {
 `.trimStart(),
 );
 
+// Tell Node.js to treat all .js files in the function directory as ES modules,
+// matching the ESM syntax used by both _adapter.js and the TanStack Start bundle.
+writeFileSync(`${fnDir}/package.json`, JSON.stringify({ type: "module" }, null, 2));
+
 // Node.js 22 serverless runtime — no Edge limitations, full Node.js API support.
 writeFileSync(
   `${fnDir}/.vc-config.json`,
