@@ -28,7 +28,7 @@ function Index() {
           Phase I — Limited Release
         </div>
 
-        <h1 className="wordmark text-foreground text-[clamp(3rem,18vw,14rem)] leading-none">
+        <h1 className="wordmark text-foreground text-[clamp(2.5rem,13vw,12rem)] leading-none">
           VALENCE
         </h1>
         <p className="mt-6 text-sm sm:text-base text-muted-foreground tracking-[0.2em] uppercase">

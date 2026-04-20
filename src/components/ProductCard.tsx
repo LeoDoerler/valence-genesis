@@ -22,7 +22,7 @@ export function ProductCard({ product }: { product: Product }) {
           width={1024}
           height={1280}
           className="absolute inset-0 h-full w-full object-cover transition-opacity duration-300"
-          style={{ opacity: showHover ? 0 : 1 }}
+          style={{ opacity: showHover ? 0 : 1, filter: "brightness(3) contrast(1.1)" }}
         />
         {product.hoverImage && (
           <img
@@ -33,7 +33,7 @@ export function ProductCard({ product }: { product: Product }) {
             width={1024}
             height={1280}
             className="absolute inset-0 h-full w-full object-cover transition-opacity duration-300"
-            style={{ opacity: showHover ? 1 : 0 }}
+            style={{ opacity: showHover ? 1 : 0, filter: "brightness(3) contrast(1.1)" }}
           />
         )}
         {product.hasSizes && (
