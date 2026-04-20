@@ -44,7 +44,9 @@ export default async function handler(req, res) {
   }
 
   const request  = new Request(url.toString(), { method: req.method, headers, body });
-  const response = await app.fetch(request);
+  const env = {};
+  const ctx = { waitUntil: () => {}, passThroughOnException: () => {} };
+  const response = await app.fetch(request, env, ctx);
 
   res.statusCode = response.status;
   response.headers.forEach((v, k) => res.setHeader(k, v));
