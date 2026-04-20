@@ -96,6 +96,13 @@ function Contact() {
               <Twitter className="h-6 w-6" strokeWidth={1.5} />
             </a>
           </div>
+
+          <div className="mt-10">
+            <div className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground mb-2">Direct line</div>
+            <a href="mailto:hello@valence.co" className="text-sm text-muted-foreground link-hover">
+              hello@valence.co
+            </a>
+          </div>
         </div>
       </div>
     </section>
