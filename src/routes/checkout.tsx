@@ -150,7 +150,7 @@ function Checkout() {
                     autoComplete="name"
                     value={fields.fullName}
                     onChange={(e) => set("fullName", e.target.value)}
-                    placeholder="Leo Doerler"
+                    placeholder="John Doe"
                     className={inputCls(errors.fullName)}
                   />
                 </Field>
@@ -160,7 +160,7 @@ function Checkout() {
                     autoComplete="email"
                     value={fields.email}
                     onChange={(e) => set("email", e.target.value)}
-                    placeholder="leo@valence.co"
+                    placeholder="JohnDoe@valence.com"
                     className={inputCls(errors.email)}
                   />
                 </Field>

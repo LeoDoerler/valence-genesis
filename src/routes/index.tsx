@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { products } from "@/lib/products";
 import { ProductCard } from "@/components/ProductCard";
+import heroBg from "@/assets/hero-bg.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -23,7 +24,17 @@ function Index() {
   return (
     <>
       {/* HERO */}
-      <section className="relative min-h-[calc(100vh-4rem)] flex flex-col items-center justify-center px-5 sm:px-8 text-center overflow-hidden">
+      <section
+        className="relative isolate min-h-[calc(100vh-4rem)] flex flex-col items-center justify-center px-5 sm:px-8 text-center overflow-hidden"
+        style={{
+          backgroundImage: `url(${heroBg})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        {/* dark overlay */}
+        <div className="absolute inset-0 -z-10" style={{ backgroundColor: "rgba(0,0,0,0.62)" }} aria-hidden />
+
         <div className="absolute top-8 left-1/2 -translate-x-1/2 text-[10px] uppercase tracking-[0.4em] text-muted-foreground">
           Phase I — Limited Release
         </div>
@@ -36,7 +47,7 @@ function Index() {
         </p>
         <Link
           to="/shop"
-          className="mt-12 inline-flex items-center justify-center px-8 py-4 text-xs uppercase tracking-[0.25em] text-primary-foreground transition-colors rounded-none"
+          className="mt-12 inline-flex items-center justify-center px-8 py-4 text-xs uppercase tracking-[0.25em] text-primary-foreground transition-colors"
           style={{ backgroundColor: "#9B5FFF" }}
           onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#0047FF")}
           onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#9B5FFF")}
