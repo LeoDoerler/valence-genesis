@@ -64,7 +64,7 @@ function ProductPage() {
         <div className="relative aspect-[4/5] bg-card border border-border">
           <img
             src={product.image}
-            alt={product.name}
+            alt={product.altText}
             width={1024}
             height={1280}
             className="absolute inset-0 h-full w-full object-cover"

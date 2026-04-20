@@ -1,5 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
-import { useState } from "react";
+import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useCart, cartSubtotal } from "@/lib/cart";
 import { SHIPPING_FLAT, FREE_SHIPPING_THRESHOLD } from "@/lib/products";
 import { Minus, Plus, X } from "lucide-react";
@@ -19,7 +18,7 @@ function Cart() {
   const setQty = useCart((s) => s.setQty);
   const remove = useCart((s) => s.remove);
   const clear = useCart((s) => s.clear);
-  const [checkingOut, setCheckingOut] = useState(false);
+  const navigate = useNavigate();
 
   const subtotal = cartSubtotal(items);
   const shipping = items.length === 0 ? 0 : subtotal >= FREE_SHIPPING_THRESHOLD ? 0 : SHIPPING_FLAT;
@@ -39,17 +38,6 @@ function Cart() {
         </Link>
       </section>
     );
-  }
-
-  function handleCheckout() {
-    setCheckingOut(true);
-    // Stripe not yet enabled — placeholder confirmation.
-    setTimeout(() => {
-      alert(
-        "Checkout placeholder.\n\nStripe test-mode payments are not yet enabled on this project.\nTo activate real checkout, enable Lovable Stripe payments from chat.",
-      );
-      setCheckingOut(false);
-    }, 400);
   }
 
   return (
@@ -142,11 +130,13 @@ function Cart() {
             <span className="tabular-nums font-display">${total.toFixed(2)}</span>
           </div>
           <button
-            onClick={handleCheckout}
-            disabled={checkingOut}
-            className="mt-8 w-full bg-primary py-4 text-xs uppercase tracking-[0.25em] text-primary-foreground hover:bg-cobalt transition-colors disabled:opacity-60"
+            onClick={() => navigate({ to: "/checkout" })}
+            className="mt-8 w-full py-4 text-xs uppercase tracking-[0.25em] text-white transition-colors"
+            style={{ backgroundColor: "#9B5FFF" }}
+            onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#0047FF")}
+            onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#9B5FFF")}
           >
-            {checkingOut ? "Processing…" : "Checkout"}
+            Proceed to checkout
           </button>
           <Link
             to="/shop"

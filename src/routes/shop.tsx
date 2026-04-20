@@ -5,10 +5,10 @@ import { ProductCard } from "@/components/ProductCard";
 export const Route = createFileRoute("/shop")({
   head: () => ({
     meta: [
-      { title: "VALENCE — Shop | Engineered for the Obsessed." },
-      { name: "description", content: "Phase I catalog. Technical apparel and equipment." },
-      { property: "og:title", content: "VALENCE — Shop" },
-      { property: "og:description", content: "Phase I catalog. Technical apparel and equipment." },
+      { title: "Catalog | VALENCE" },
+      { name: "description", content: "Explore the Phase I collection featuring molecularly inspired designs." },
+      { property: "og:title", content: "Catalog | VALENCE" },
+      { property: "og:description", content: "Explore the Phase I collection featuring molecularly inspired designs." },
     ],
   }),
   component: Shop,

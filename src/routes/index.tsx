@@ -6,10 +6,10 @@ import { ProductCard } from "@/components/ProductCard";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "VALENCE — Home | Engineered for the Obsessed." },
-      { name: "description", content: "Phase I. Technical apparel for the chemically literate." },
-      { property: "og:title", content: "VALENCE — Engineered for the Obsessed." },
-      { property: "og:description", content: "Phase I. Technical apparel for the chemically literate." },
+      { title: "VALENCE | Engineered for the Obsessed" },
+      { name: "description", content: "High-performance gym apparel engineered for the obsessed. Phase I Limited Release." },
+      { property: "og:title", content: "VALENCE | Engineered for the Obsessed" },
+      { property: "og:description", content: "High-performance gym apparel engineered for the obsessed. Phase I Limited Release." },
     ],
   }),
   component: Index,
@@ -36,7 +36,10 @@ function Index() {
         </p>
         <Link
           to="/shop"
-          className="mt-12 inline-flex items-center justify-center bg-primary px-8 py-4 text-xs uppercase tracking-[0.25em] text-primary-foreground hover:bg-cobalt transition-colors"
+          className="mt-12 inline-flex items-center justify-center px-8 py-4 text-xs uppercase tracking-[0.25em] text-primary-foreground transition-colors rounded-none"
+          style={{ backgroundColor: "#9B5FFF" }}
+          onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#0047FF")}
+          onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#9B5FFF")}
         >
           Enter Phase I
         </Link>
@@ -102,7 +105,10 @@ function Index() {
             />
             <button
               type="submit"
-              className="bg-primary px-6 py-3 text-xs uppercase tracking-[0.25em] text-primary-foreground hover:bg-cobalt transition-colors"
+              className="px-6 py-3 text-xs uppercase tracking-[0.25em] text-primary-foreground transition-colors rounded-none"
+              style={{ backgroundColor: "#9B5FFF", fontFamily: "var(--font-display)" }}
+              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#0047FF")}
+              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#9B5FFF")}
             >
               Submit
             </button>

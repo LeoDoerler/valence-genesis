@@ -21,7 +21,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 bg-black border-b border-border">
       <div className="mx-auto max-w-7xl px-5 sm:px-8 h-16 flex items-center justify-between">
-        <Link to="/" className="wordmark text-base text-foreground link-hover">
+        <Link to="/" className="wordmark text-base text-[#F5F5F5]" style={{ fontFamily: "var(--font-display)" }}>
           VALENCE
         </Link>
 
@@ -30,13 +30,18 @@ export function Header() {
             <Link
               key={l.to}
               to={l.to}
-              className="text-sm uppercase tracking-[0.18em] text-foreground link-hover"
-              activeProps={{ style: { color: "var(--primary)" } }}
+              className="text-sm uppercase tracking-[0.18em] text-[#F5F5F5] transition-colors duration-150 hover:text-[#9B5FFF]"
+              style={{ fontFamily: "var(--font-sans)" }}
+              activeProps={{ style: { color: "#9B5FFF", fontFamily: "var(--font-sans)" } }}
             >
               {l.label}
             </Link>
           ))}
-          <Link to="/cart" className="relative flex items-center text-foreground link-hover" aria-label="Cart">
+          <Link
+            to="/cart"
+            className="relative flex items-center text-[#F5F5F5] transition-colors duration-150 hover:text-[#9B5FFF]"
+            aria-label="Cart"
+          >
             <ShoppingBag className="h-5 w-5" strokeWidth={1.5} />
             {count > 0 && (
               <span className="ml-2 text-xs tracking-widest text-primary">[{count}]</span>
@@ -45,14 +50,18 @@ export function Header() {
         </nav>
 
         <div className="md:hidden flex items-center gap-5">
-          <Link to="/cart" className="relative flex items-center text-foreground" aria-label="Cart">
+          <Link
+            to="/cart"
+            className="relative flex items-center text-[#F5F5F5] transition-colors duration-150 hover:text-[#9B5FFF]"
+            aria-label="Cart"
+          >
             <ShoppingBag className="h-5 w-5" strokeWidth={1.5} />
             {count > 0 && <span className="ml-1.5 text-xs text-primary">[{count}]</span>}
           </Link>
           <button
             onClick={() => setOpen((v) => !v)}
             aria-label="Menu"
-            className="text-foreground"
+            className="text-[#F5F5F5] transition-colors duration-150 hover:text-[#9B5FFF]"
           >
             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
@@ -67,8 +76,9 @@ export function Header() {
                 key={l.to}
                 to={l.to}
                 onClick={() => setOpen(false)}
-                className="text-sm uppercase tracking-[0.18em] text-foreground"
-                activeProps={{ style: { color: "var(--primary)" } }}
+                className="text-sm uppercase tracking-[0.18em] text-[#F5F5F5] transition-colors duration-150 hover:text-[#9B5FFF]"
+                style={{ fontFamily: "var(--font-sans)" }}
+                activeProps={{ style: { color: "#9B5FFF", fontFamily: "var(--font-sans)" } }}
               >
                 {l.label}
               </Link>

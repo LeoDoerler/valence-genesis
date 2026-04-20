@@ -12,6 +12,7 @@ export type Product = {
   hoverImage?: string;
   hasSizes: boolean;
   description: string;
+  altText: string;
   fabric: { gsm: string; composition: string; fit: string };
   molecular: { compound: string; role: string };
 };
@@ -24,6 +25,7 @@ export const products: Product[] = [
     image: synthesisImg,
     hoverImage: blueprintImg,
     hasSizes: true,
+    altText: "Synthesis Tee featuring Caffeine molecular structure graphic on chest",
     description:
       "Caffeine molecule graphic. 240gsm cotton-poly blend. Controlled taper cut.",
     fabric: { gsm: "240", composition: "65% combed cotton / 35% polyester", fit: "Controlled taper" },
@@ -39,6 +41,7 @@ export const products: Product[] = [
     image: meridianImg,
     hoverImage: synthesisImg,
     hasSizes: true,
+    altText: "Meridian Tee featuring L-Citrulline molecular structure graphic on chest",
     description:
       "L-Citrulline structure. Same fabric. Slightly more relaxed fit than the Synthesis.",
     fabric: { gsm: "240", composition: "65% combed cotton / 35% polyester", fit: "Relaxed straight" },
@@ -54,6 +57,7 @@ export const products: Product[] = [
     image: blueprintImg,
     hoverImage: meridianImg,
     hasSizes: true,
+    altText: "Blueprint Tee featuring Sarcomere contractile unit diagram graphic on chest",
     description:
       "Sarcomere diagram. For the lifter who understands mechanical tension.",
     fabric: { gsm: "240", composition: "65% combed cotton / 35% polyester", fit: "Controlled taper" },
@@ -69,6 +73,7 @@ export const products: Product[] = [
     image: signalImg,
     hoverImage: synthesisImg,
     hasSizes: true,
+    altText: "Signal Hoodie featuring Testosterone molecular structure graphic, heavyweight structured silhouette",
     description:
       "Testosterone molecular structure. Heavyweight structured hoodie.",
     fabric: { gsm: "440", composition: "80% cotton / 20% polyester fleece", fit: "Structured oversized" },
@@ -84,6 +89,7 @@ export const products: Product[] = [
     image: shakerImg,
     hoverImage: shakerImg,
     hasSizes: false,
+    altText: "Delivery System Shaker Cup in black with stainless mixing coil, 750ml capacity",
     description:
       "No size variants. One color: black. The delivery system for everything else.",
     fabric: { gsm: "—", composition: "BPA-free copolyester / stainless mixing coil", fit: "750ml capacity" },

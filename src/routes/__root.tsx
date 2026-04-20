@@ -49,6 +49,18 @@ function RootShell({ children }: { children: React.ReactNode }) {
     <html lang="en" className="dark">
       <head>
         <HeadContent />
+        {/* Google Analytics 4 — replace G-VALENCE2026 with your real Measurement ID */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-VALENCE2026" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-VALENCE2026');
+`,
+          }}
+        />
       </head>
       <body className="bg-background text-foreground">
         {children}
