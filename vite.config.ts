@@ -6,9 +6,4 @@
 // You can pass additional config via defineConfig({ vite: { ... } }) if needed.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
-// When building on Vercel (VERCEL=1 is set automatically), skip the
-// Cloudflare Workers bundler so the output is a plain Web Fetch API
-// handler that Vercel Edge Functions can run directly.
-export default defineConfig({
-  cloudflare: !process.env.VERCEL,
-});
+export default defineConfig();
