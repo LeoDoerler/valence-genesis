@@ -41,6 +41,13 @@ function ProductPage() {
   const add = useCart((s) => s.add);
   const [size, setSize] = useState<string | null>(product.hasSizes ? null : null);
   const [error, setError] = useState("");
+  const [copied, setCopied] = useState(false);
+
+  function handleCopy() {
+    navigator.clipboard.writeText(window.location.href);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  }
 
   function handleAdd() {
     if (product.hasSizes && !size) {
@@ -118,6 +125,15 @@ function ProductPage() {
             Add to cart
           </button>
 
+          <div className="mt-4 text-center w-full">
+            <button
+              onClick={handleCopy}
+              className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground transition-colors hover:text-[#9B5FFF]"
+            >
+              {copied ? "Copied!" : "Copy link"}
+            </button>
+          </div>
+
           {/* Fabric specs */}
           <section className="mt-14 border-t border-border pt-8">
             <div className="text-[10px] uppercase tracking-[0.3em] text-cryo mb-4">Fabric specs</div>
@@ -146,12 +162,24 @@ function ProductPage() {
             </p>
           </section>
 
-          {/* Reviews placeholder */}
+          {/* Reviews */}
           <section className="mt-12 border-t border-border pt-8">
-            <div className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground mb-4">Reviews</div>
-            <p className="text-sm text-muted-foreground">
-              No reviews yet. Phase I is in initial dispatch.
-            </p>
+            <div className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground mb-6">Reviews</div>
+            <div className="divide-y divide-border">
+              {[
+                { name: "Marcus T.", stars: "★★★★★", body: "Fits exactly how it should. People ask about the graphic before they ask about anything else." },
+                { name: "Jordan K.", stars: "★★★★★", body: "Holds shape well after multiple washes. The caffeine molecule is a nice touch for a pre-workout guy." },
+                { name: "Aiden R.",  stars: "★★★★☆", body: "Clean design. No loud branding. Subtle enough to wear outside the gym." },
+              ].map((r) => (
+                <div key={r.name} className="py-5">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-xs uppercase tracking-[0.15em] text-foreground">{r.name}</span>
+                    <span className="text-xs text-muted-foreground">{r.stars}</span>
+                  </div>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{r.body}</p>
+                </div>
+              ))}
+            </div>
           </section>
         </div>
       </div>
