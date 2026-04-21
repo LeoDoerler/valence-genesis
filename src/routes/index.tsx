@@ -59,6 +59,12 @@ function Index() {
           <span className="block w-px h-8 bg-border" />
           Scroll
         </div>
+
+        <div
+          aria-hidden
+          className="absolute bottom-0 left-0 right-0 h-[40%] pointer-events-none"
+          style={{ background: "linear-gradient(to bottom, transparent, #000000)" }}
+        />
       </section>
 
       {/* FEATURED */}
