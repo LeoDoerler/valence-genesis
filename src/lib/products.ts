@@ -1,15 +1,13 @@
-import synthesisImg from "@/assets/synthesis-tee.jpg";
-import meridianImg from "@/assets/meridian-tee.jpg";
-import blueprintImg from "@/assets/blueprint-tee.jpg";
-import signalImg from "@/assets/signal-hoodie.jpg";
-import shakerImg from "@/assets/shaker-cup.jpg";
+import synthesisImg from "@/assets/synthesis-tee.png";
+import meridianImg from "@/assets/meridian-tee.png";
+import signalImg from "@/assets/signal-hoodie.png";
+import shakerImg from "@/assets/shaker-cup.png";
 
 export type Product = {
   slug: string;
   name: string;
   price: number;
   image: string;
-  hoverImage?: string;
   hasSizes: boolean;
   description: string;
   altText: string;
@@ -23,9 +21,9 @@ export const products: Product[] = [
     name: "Synthesis Tee",
     price: 65,
     image: synthesisImg,
-    hoverImage: blueprintImg,
+
     hasSizes: true,
-    altText: "Synthesis Tee featuring Caffeine molecular structure graphic on chest",
+    altText: "Synthesis Tee — black tee with caffeine molecular structures on both sleeves and V logo on chest",
     description:
       "Caffeine molecule graphic. 240gsm cotton-poly blend. Controlled taper cut.",
     fabric: { gsm: "240", composition: "65% combed cotton / 35% polyester", fit: "Controlled taper" },
@@ -39,9 +37,9 @@ export const products: Product[] = [
     name: "Meridian Tee",
     price: 65,
     image: meridianImg,
-    hoverImage: synthesisImg,
+
     hasSizes: true,
-    altText: "Meridian Tee featuring L-Citrulline molecular structure graphic on chest",
+    altText: "Meridian Tee — black tee with L-citrulline molecular structure running down the left side and V logo on chest",
     description:
       "L-Citrulline structure. Same fabric. Slightly more relaxed fit than the Synthesis.",
     fabric: { gsm: "240", composition: "65% combed cotton / 35% polyester", fit: "Relaxed straight" },
@@ -51,29 +49,13 @@ export const products: Product[] = [
     },
   },
   {
-    slug: "blueprint-tee",
-    name: "Blueprint Tee",
-    price: 65,
-    image: blueprintImg,
-    hoverImage: meridianImg,
-    hasSizes: true,
-    altText: "Blueprint Tee featuring Sarcomere contractile unit diagram graphic on chest",
-    description:
-      "Sarcomere diagram. For the lifter who understands mechanical tension.",
-    fabric: { gsm: "240", composition: "65% combed cotton / 35% polyester", fit: "Controlled taper" },
-    molecular: {
-      compound: "Sarcomere — contractile unit of striated muscle",
-      role: "Z-disc to Z-disc. Actin and myosin filaments slide under cross-bridge cycling. Mechanical tension at the sarcomere level is the primary driver of hypertrophic signaling via mTOR.",
-    },
-  },
-  {
     slug: "signal-hoodie",
     name: "Signal Hoodie",
     price: 90,
     image: signalImg,
-    hoverImage: synthesisImg,
+
     hasSizes: true,
-    altText: "Signal Hoodie featuring Testosterone molecular structure graphic, heavyweight structured silhouette",
+    altText: "Signal Hoodie — black hoodie with mirrored testosterone molecular structures across the chest",
     description:
       "Testosterone molecular structure. Heavyweight structured hoodie.",
     fabric: { gsm: "440", composition: "80% cotton / 20% polyester fleece", fit: "Structured oversized" },
@@ -87,9 +69,9 @@ export const products: Product[] = [
     name: "Delivery System Shaker Cup",
     price: 35,
     image: shakerImg,
-    hoverImage: shakerImg,
+
     hasSizes: false,
-    altText: "Delivery System Shaker Cup in black with stainless mixing coil, 750ml capacity",
+    altText: "Delivery System Shaker Cup — black shaker with large V logo and molecular structures printed on the body",
     description:
       "No size variants. One color: black. The delivery system for everything else.",
     fabric: { gsm: "—", composition: "BPA-free copolyester / stainless mixing coil", fit: "750ml capacity" },
